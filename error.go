@@ -11,11 +11,9 @@ type httpResponse struct {
 	Message string `json:"message"`
 }
 
-//Check will log output to console on error
-func Check(err error) {
-	if(err != nil){
-		panic(err)
-	}
+//Check - returns true if error not nil
+func Check(err error) bool {
+	return err != nil
 } 
 
 // SendError - writes error message to io.Writer
