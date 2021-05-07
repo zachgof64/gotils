@@ -3,6 +3,7 @@ package gotils
 import (
 	"encoding/json"
 	"io"
+	"log"
 	"net/http"
 )
 
@@ -24,4 +25,5 @@ func SendHTTPError(err error, w http.ResponseWriter) {
 	}
 
 	json.NewEncoder(w).Encode(d)
+	log.Fatal(err)
 }
