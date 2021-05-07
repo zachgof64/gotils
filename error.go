@@ -11,11 +11,6 @@ type httpResponse struct {
 	Message string `json:"message"`
 }
 
-//Check - returns true if error not nil
-func Check(err error) bool {
-	return err != nil
-} 
-
 // SendError - writes error message to io.Writer
 func SendError(err error, w io.Writer) {
 	w.Write([]byte(err.Error()))
